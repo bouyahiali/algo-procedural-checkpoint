@@ -1,0 +1,33 @@
+FUNCTION Dot_Prod(V1,V2 : ARRAY_OF INTEGER[n];ps:INTEGER) : INTEGER
+BEGIN
+    FOR i FROM 0 TO 2 STEP 1  DO
+            ps := ps + V1[i] * V2[i]
+    END_FOR
+    RETURN ps ;
+END
+
+
+ALGORITHM Dot_Product
+VAR
+    V1 : ARRAY_OF INTEGER [2];
+    V2 : ARRAY_OF INTEGER [2];
+    i,j,n,ps : INTEGER
+BEGIN
+    Write("enter n");read(n);
+
+    FOR i FROM 0 TO 2 STEP 1  DO
+        Write("enter vector 1")
+        read(V1[i])
+        Write("enter vector 1")
+        read(V2[i])
+    END_FOR
+
+    Dot_P := Dot_Prod(V1,V2,ps);
+
+        IF (Dot_P == 0) THEN
+            Write(V1 + "and" + V2 + "are orthogonal");
+        ELSE
+            Write(V1 + "and" + V2 + "are not orthogonal");
+        END_IF
+
+END
